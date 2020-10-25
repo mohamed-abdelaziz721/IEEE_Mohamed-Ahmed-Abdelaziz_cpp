@@ -1,7 +1,7 @@
 ## Tabel Of Content
 
 - [Pointer Declaratrion And Assigning](#heading)
-  * [Sub-heading](#sub-heading)
+  * [Pointers And Arrays](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
@@ -52,7 +52,7 @@ cout<< "(*ptr):" <<*ptr << endl;   // output: 10
 
 //changing value pointed by the pointer
 *ptr = 5;
-cout << "var:"<< var << endl;  
+cout << "var:"<< var << endl;      // output: 5
 ```
 **notice:** 
 * we used `*` after the data type to declare a pointer.
@@ -65,7 +65,7 @@ cout << "var:"<< var << endl;
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 
 
-### Sub-heading
+## Pointers And Arrays
 
 This is an h2 heading
 
