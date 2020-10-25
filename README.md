@@ -1,6 +1,6 @@
 ## Tabel Of Content
 
-- [Heading](#heading)
+- [Pointer Declaratrion And Assigning](#heading)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
@@ -22,16 +22,57 @@ int main()
 {
     // declare variable
     int var1 = 3;
+    int var2 = 5;
 
 
     // print address of var1
     cout << "Address of var1: "<< &var1 << endl;
+    / print address of var2
+    cout << "Address of var2: "<< &var2 << endl;
+
 }
 ```
+You will see an output that begin with `0x` which indicate the address of the variable in the memory. 
+**notice:** `int` variable has a zize of 4 byte in a 64-bit operating system.  
 
-## Heading
 
-This is an h1 heading
+## Pointer Declaratrion And Assigning
+```
+// pointer declaration
+int* ptr;
+// or int *ptr
+  
+// assigning address to pointer
+int* ptr, var;
+var = 10;
+ptr = &var;
+
+//accessing the value of the ptr
+cout<< "(*ptr):" <<*ptr << endl;   // output: 10
+
+//changing value pointed by the pointer
+*ptr = 5;
+cout << "var:"<< var << endl;  
+```
+**notice:** 
+* we used `*` after the data type to declare a pointer.
+* `var`is not a pointer.
+* we stored `var` address into `ptr`.
+* we used `*` **dereference operator** to print the value stored in this address.
+* we can change the `var` content by working with pointers. 
+
+> *note* `*ptr`  is a value and `&var` is an address so we cannot write `*ptr = &var`.
+
+**avoid**
+```
+int *ptr, var;
+// ptr is an address while var has a value
+ptr = var;
+
+// *ptr has a value while &var is an address
+*ptr = &var
+
+```
 
 ### Sub-heading
 
