@@ -9,9 +9,23 @@
 
 
 
-# Heading levels
+# Pointers
 
-> This is a fixture to test heading levels
+> Pointers are variables that store the memory addresses of other variables. For any `variable` we can have its adress by `&variable`.
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // declare variable
+    int var1 = 3;
+
+
+    // print address of var1
+    cout << "Address of var1: "<< &var1 << endl;
+}
+```
 
 ## Heading
 
