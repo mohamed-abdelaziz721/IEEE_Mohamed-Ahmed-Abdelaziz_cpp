@@ -11,7 +11,7 @@
 
 # Pointers
 
-> Pointers are variables that store the memory addresses of other variables. For any `variable` we can have its adress by `&variable`.
+> Pointers are variables that store the memory addresses of other variables. For any `variable` we can have its address by `&variable`.
 
 
 ```c++
@@ -33,11 +33,11 @@ int main()
 }
 ```
 You will see an output that begin with `0x` which indicate the address of the variable in the memory. 
-**notice:** `int` variable has a zize of 4 byte in a 64-bit operating system.  
+**notice:** `int` variable has a size of 4 byte in a 64-bit operating system.  
 
 
 ## Pointer Declaratrion And Assigning
-```
+```c++
 // pointer declaration
 int* ptr;
 // or int *ptr
@@ -61,18 +61,9 @@ cout << "var:"<< var << endl;
 * we used `*` **dereference operator** to print the value stored in this address.
 * we can change the `var` content by working with pointers. 
 
-> *note* `*ptr`  is a value and `&var` is an address so we cannot write `*ptr = &var`.
+> *note* `*ptr`  has a value and `&var` is an address so we cannot write `*ptr = &var`.
+>  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 
-**avoid**
-```
-int *ptr, var;
-// ptr is an address while var has a value
-ptr = var;
-
-// *ptr has a value while &var is an address
-*ptr = &var
-
-```
 
 ### Sub-heading
 
