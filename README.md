@@ -172,9 +172,38 @@ one variable only
 
 ### Pass by value 
 We pass a copy of the value when we did not want to change the actual value of the variable 
+```c++
+void passByVal(int val)
+{
+  val = 10;
+  cout<< "val = " << val;
+}
+int main()
+{
+ int x = 5;
+ cout<< "x = "<< x << endl; //5
+ passByVal(x);
+ cout<< "x = "<< x << endl; //5
+ 
+ }
+```
 
 ### Pass by pointer
 we are passing the address of the variable.
+```c++
+void passByPtr(int *ptr)
+{
+  *ptr = 20;
+  cout<< "*ptr = " << *ptr;
+  int main()
+{
+ int x = 5;
+ cout<< "x = "<< x << endl; //5
+ passByPtr(&x); //20
+ cout<< "x = "<< x << endl; //20
+ 
+}
+```
 
 
 ### Pass by reference
@@ -186,12 +215,53 @@ References are usually implemented by pointers. A refrence is same object with a
 * pointers can iterate over an array.
 * pointer is a variable that hold memory address, reference has the same memory as the object .
 * pointers need to be dereferenced to acces the memory while the reference can be used directly. 
-
+```c++
+void passByRef(int &ref)
+{
+  ref = 30;
+  cout<< "ref = " << ref;
+  int main()
+{
+ int x = 5;
+ cout<< "x = "<< x << endl; //5
+ passByRef(x); //30
+ cout<< "x = "<< x << endl; //30
+ 
+}
+```
 
 ### Pass by  pointer reference
 we are making a reference to the pointer. Thus we want to modify the pointer without modifying the object that the pointer is pointing to. 
+```c++
+int n1 = 1;
+int n2 = 2;
+int* p2;
+void passByPtr(int *ptr);
+void passByPtrRef(int *&ptrRef);
+int main(){
+int* p1 = &n1;
+p2 = &n2;
+passByPtr(&n1);
+passByPtrRef(p1);
+return 0;
+}
+void passByPtr(int *p1)
+{
+ *ptr= 3;
+ ptr= p2;
+ *ptr = 4;
+ cout<< "pass by pointer"<< endl;
+}
 
-
+void passByPtrRef(int *&ptrRef)
+{
+ *ptrRef = 5;
+ ptrRef = p2;
+ *ptrRef = 6;
+ cout<< "pass by pointer reference"<< endl;
+ }
+```
+here 
 
 
 ### Support or Contact
