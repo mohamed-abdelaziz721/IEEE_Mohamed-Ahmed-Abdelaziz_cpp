@@ -1,6 +1,6 @@
 ## Tabel Of Content
 
-- [Pointer Declaratrion And Assigning](#heading)
+- [Pointer Declaratrion And Assigning ](#heading)
   * [Pointers And Arrays](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
 - [Heading](#heading-1)
@@ -62,15 +62,77 @@ cout << "var:"<< var << endl;      // output: 5
 * we can change the `var` content by working with pointers. 
 
 > *note* `*ptr`  has a value and `&var` is an address so we cannot write `*ptr = &var`.
+
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 
 
 ## Pointers And Arrays
+Pointers can store address of cells of an array. 
+```c++
+int *ptr;
+int arr[4] = {1, 2, 3, 4};
+ // address of the first element of the array is stored in the pointer ptr
+ptr = arr;  // or ptr = &arr[0];
+```
+Here the pointer points to the address of the first element of the array.
 
-This is an h2 heading
 
-#### Sub-sub-heading
+**Navigation through the array using pointers**
+```c++
+int *ptr;
+int arr[4] = {1, 2, 3, 4};
+ptr = arr;
+// printing address of array elements using pointers
+ for (int i = 0; i < 4; ++i)
+ {
+    cout<< "ptr + " << i << "=" << ptr + i << endl;
+    //printing address of array elements 
+    // cout<< "&arr[" << i << "] = " << &arr[i] << endl;
+ }
+ 
+ 
+ // printing values of array elements using pointers
+ for (int i = 0; i < 4; ++i)
+ {
+    cout<< "*(ptr + " << i << " ) =" << *(ptr + i) << endl;
+    //printing values of array elements 
+    // cout<< "arr[" << i << "] = " << arr[i] << endl;
+}
+```
 
+> If we initialize `ptr  = &arr[1]` we will have 
+> ptr - 1  is same as &arr[0]
+> ptr + 1  is same as &arr[2]
+> ptr + 2  is same as &arr[3]
+
+
+#### Array name used as a pointer
+```c++
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5];
+    
+   // Insert data using pointer notation
+    cout << "Enter 5 numbers: ";
+    for (int i = 0; i < 5; ++i) 
+    {
+        // store input number in arr[i]
+        cin >> *(arr + i) ;
+    }
+
+    // printing data using pointer notation
+    cout << "Array elements: " << endl;
+    for (int i = 0; i < 5; ++i) 
+    {
+        // print value of arr[i]
+        cout << *(arr + i) << endl ;
+    }
+    return 0;
+}
+```
+**notice** we did not declare a pointer, but instead we used the array ame for the pointer notation.
 This is an h3 heading
 
 ## Heading
