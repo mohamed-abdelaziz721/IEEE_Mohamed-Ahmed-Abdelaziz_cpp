@@ -215,18 +215,21 @@ References are usually implemented by pointers. A refrence is same object with a
 * pointers can iterate over an array.
 * pointer is a variable that hold memory address, reference has the same memory as the object .
 * pointers need to be dereferenced to acces the memory while the reference can be used directly. 
+
+
 ```c++
 void passByRef(int &ref)
 {
   ref = 30;
   cout<< "ref = " << ref;
+ }
   int main()
 {
  int x = 5;
  cout<< "x = "<< x << endl; //5
  passByRef(x); //30
  cout<< "x = "<< x << endl; //30
- 
+
 }
 ```
 
