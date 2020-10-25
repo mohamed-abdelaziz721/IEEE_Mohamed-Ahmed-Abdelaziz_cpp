@@ -2,10 +2,13 @@
 
 - [Pointer Declaratrion And Assigning ](#heading)
   * [Pointers And Arrays](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
+    + [ Array name used as a pointer](#sub-sub-heading)
 - [Heading](#heading-1)
   * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
+  * [Sub-heading](#sub-heading-1)
+  * [Sub-heading](#sub-heading-1)
+  * [Sub-heading](#sub-heading-1)
+
 
 
 
@@ -101,8 +104,11 @@ ptr = arr;
 ```
 
 > If we initialize `ptr  = &arr[1]` we will have 
+
 > ptr - 1  is same as &arr[0]
+
 > ptr + 1  is same as &arr[2]
+
 > ptr + 2  is same as &arr[3]
 
 
@@ -132,7 +138,7 @@ int main() {
     return 0;
 }
 ```
-**notice** we did not declare a pointer, but instead we used the array ame for the pointer notation.
+**notice** we did not declare a pointer, but instead we used the array name for the pointer notation.
 This is an h3 heading
 
 ## Heading
