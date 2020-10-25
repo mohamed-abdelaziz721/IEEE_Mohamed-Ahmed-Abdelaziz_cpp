@@ -3,11 +3,11 @@
 - [Pointer Declaratrion And Assigning ](#heading)
   * [Pointers And Arrays](#sub-heading)
     + [ Array name used as a pointer](#sub-sub-heading)
-- [Heading](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-  * [Sub-heading](#sub-heading-1)
-  * [Sub-heading](#sub-heading-1)
-  * [Sub-heading](#sub-heading-1)
+- [Passing Arguments To Function](#heading-1)
+  * [Pass by value](#sub-heading-1)
+  * [Pass by pointer](#sub-heading-1)
+  * [Pass by reference](#sub-heading-1)
+  * [Pass by pointer reference](#sub-heading-1)
 
 
 
@@ -70,7 +70,7 @@ cout << "var:"<< var << endl;      // output: 5
 
 
 ## Pointers And Arrays
-Pointers can store address of cells of an array. 
+Pointers can store address of cells of an array. Array is a static pointer.
 ```c++
 int *ptr;
 int arr[4] = {1, 2, 3, 4};
@@ -101,6 +101,13 @@ ptr = arr;
     //printing values of array elements 
     // cout<< "arr[" << i << "] = " << arr[i] << endl;
 }
+
+cout << arr << endl;
+cout << arr +1 << endl;
+cout << *arr << endl;
+cout << *arr+1 << endl;
+cout << *(arr+1) << endl;
+
 ```
 
 > If we initialize `ptr  = &arr[1]` we will have 
@@ -132,26 +139,59 @@ int main() {
     cout << "Array elements: " << endl;
     for (int i = 0; i < 5; ++i) 
     {
-        // print value of arr[i]
-        cout << *(arr + i) << endl ;
+        // print value of arr[i] 
+        cout << *(arr + i) << endl ; 
+        // *(arr++) will give an error as it mean changing the array address which is the first element 
+        // *(ptr++)  is normal operation 
+        
     }
     return 0;
 }
 ```
 **notice** we did not declare a pointer, but instead we used the array name for the pointer notation.
 This is an h3 heading
+To see what is wrong with arr++ we use a simplified example:
+```c++
+int a = 0;
+cout << a+1 << endl; // output: 1 but a is still holding value of 0 in the memory
+cout << a++ << endl; // output: 1 but a now hold a value 1 in the memory  
+```
 
-## Heading
+## Passing Arguments To Function
 
-This is an h1 heading
+We can pass actual value to the function, pass the address of the value, or passing a reference to the function. Each has a different methadology and application.
+```c++
+int var1 = 5;
+int var2 = 10
+int *ptr;
+ptr = &var1;   // pointer has the address of var1
+int &ref = var1;  // now var1 and ref has the same address 
+ptr = &var2;  // pointer addres can follow each variable it is assigned to, but refrence are assigned to 
+one variable only
+```
 
-### Sub-heading
+### Pass by value 
+We pass a copy of the value when we did not want to change the actual value of the variable 
 
-This is an h2 heading
+### Pass by pointer
+we are passing the address of the variable.
 
-#### Sub-sub-heading
 
-This is an h3 heading
+### Pass by reference
+we pass the actual value of the variable.
+**pass by refrence VS pass by pointer**
+References are usually implemented by pointers. A refrence is same object with a different name. Reference must refere to an object and cannot be NULL so it is safer to use.
+* pointers can be assigned, reference cannot.
+* pointers can be null.
+* pointers can iterate over an array.
+* pointer is a variable that hold memory address, reference has the same memory as the object .
+* pointers need to be dereferenced to acces the memory while the reference can be used directly. 
+
+
+### Pass by  pointer reference
+we are making a reference to the pointer. Thus we want to modify the pointer without modifying the object that the pointer is pointing to. 
+
+
 
 
 ### Support or Contact
