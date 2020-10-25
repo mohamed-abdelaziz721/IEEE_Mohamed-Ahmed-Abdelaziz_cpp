@@ -12,6 +12,8 @@
 # Pointers
 
 > Pointers are variables that store the memory addresses of other variables. For any `variable` we can have its adress by `&variable`.
+
+
 ```c++
 #include <iostream>
 using namespace std;
