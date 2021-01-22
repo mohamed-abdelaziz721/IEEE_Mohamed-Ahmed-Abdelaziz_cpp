@@ -1,18 +1,18 @@
 ## Tabel Of Content
 
-- [Pointer Declaratrion And Assigning ](#heading)
-  * [Pointers And Arrays](#sub-heading)
-    + [ Array name used as a pointer](#sub-sub-heading)
-- [Passing Arguments To Function](#heading-1)
-  * [Pass by value](#sub-heading-1)
-  * [Pass by pointer](#sub-heading-1)
-  * [Pass by reference](#sub-heading-1)
-  * [Pass by pointer reference](#sub-heading-1)
+- [Pointer Declaratrion And Assigning ](#pointers)
+  * [Pointers And Arrays](#pointersandarrays)
+    + [ Array name used as a pointer](#array-name-used-as-a-pointer)
+- [Passing Arguments To Function](#pass-arg)
+  * [Pass by value](#pass-v)
+  * [Pass by pointer](#pass-p)
+  * [Pass by reference](#pass-r)
+  * [Pass by pointer reference](#pass-pr)
 
 
 
 
-# Pointers
+# Pointers <a name="pointers"></a>
 
 > Pointers are variables that store the memory addresses of other variables. For any `variable` we can have its address by `&variable`.
 
@@ -69,7 +69,7 @@ cout << "var:"<< var << endl;      // output: 5
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 
 
-## Pointers And Arrays
+## Pointers And Arrays <a name="pointersandarrays"></a>
 Pointers can store address of cells of an array. Array is a static pointer.
 ```c++
 int *ptr;
@@ -119,7 +119,7 @@ cout << *(arr+1) << endl;
 > ptr + 2  is same as &arr[3]
 
 
-#### Array name used as a pointer
+#### Array name used as a pointer <a name="array-name-used-as-a-pointer"></a>
 ```c++
 #include <iostream>
 using namespace std;
@@ -157,7 +157,7 @@ cout << a+1 << endl; // output: 1 but a is still holding value of 0 in the memor
 cout << a++ << endl; // output: 1 but a now hold a value 1 in the memory  
 ```
 
-## Passing Arguments To Function
+## Passing Arguments To Function <a name="pass-arg"></a>
 
 We can pass actual value to the function, pass the address of the value, or passing a reference to the function. Each has a different methadology and application.
 ```c++
@@ -170,7 +170,7 @@ ptr = &var2;  // pointer addres can follow each variable it is assigned to, but 
 one variable only
 ```
 
-### Pass by value 
+### Pass by value <a name="pass-v"></a>
 We pass a copy of the value when we did not want to change the actual value of the variable 
 ```c++
 void passByVal(int val)
@@ -188,7 +188,7 @@ int main()
  }
 ```
 
-### Pass by pointer
+### Pass by pointer <a name="pass-p"></a>
 we are passing the address of the variable.
 ```c++
 void passByPtr(int *ptr)
@@ -206,7 +206,7 @@ void passByPtr(int *ptr)
 ```
 
 
-### Pass by reference
+### Pass by reference <a name="pass-r"></a>
 we pass the actual value of the variable.
 **pass by refrence VS pass by pointer**
 References are usually implemented by pointers. A refrence is same object with a different name. Reference must refere to an object and cannot be NULL so it is safer to use.
@@ -233,7 +233,7 @@ void passByRef(int &ref)
 }
 ```
 
-### Pass by  pointer reference
+### Pass by  pointer reference <a name="pass-pr"></a>
 we are making a reference to the pointer. Thus we want to modify the pointer without modifying the object that the pointer is pointing to. 
 ```c++
 int n1 = 1;
