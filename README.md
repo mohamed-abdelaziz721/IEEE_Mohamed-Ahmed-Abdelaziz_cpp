@@ -205,11 +205,13 @@ cout << a+1 << endl; // output: 1 but a is still holding value of 0 in the memor
 cout << a++ << endl; // output: 1 but a now hold a value 1 in the memory  
 ```
 
-## Passing Arguments To Function <a name="array-pass-to-function"></a>
+## Passing Array to Function <a name="array-pass-to-function"></a>
 C++ does not allow to pass an entire array as an argument to a function. However, You can pass a pointer to an array by specifying the array's name without an index.\
 If you want to pass a single-dimension array as an argument in a function, you would have to declare the function in one of following three ways and all three declaration methods produce similar results because each tells the compiler that an **integer pointer** is going to be received.
 > void Fun(int *arr) { ..... }       // as a pointer 
+>
 > void Fun(int arr[10]) { ..... }   // as sized array
+>
 > void Fun(int arr[]) { ..... }    // as unsized array
 ```c++
 #include <iostream>
