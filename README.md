@@ -71,7 +71,7 @@ cout << "var:"<< var << endl;      // output: 5
 
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 ## Pointers Applications in C++ <a name="pointers-applications"></a>
-1. Passing arguments by reference to modify variable of function in other(e.g. swap two variables)\
+* Passing arguments by reference to modify variable of function in other(e.g. swap two variables)\
 or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage)
 
 ```c++
@@ -93,11 +93,11 @@ int main()
     return 0; 
 } 
 ```
-2. Accessing array elements. Compiler internally uses pointers to access array elements.
-3. To return multiple values (e.g. returning square and square root of numbers or returning an array)
-4. Dynamic memory allocation : We can use pointers to dynamically allocate memory. The advantage of dynamically allocated memory is, it is not deleted until we explicitly delete it.
+* Accessing array elements. Compiler internally uses pointers to access array elements.
+* To return multiple values (e.g. returning square and square root of numbers or returning an array)
+* Dynamic memory allocation : We can use pointers to dynamically allocate memory. The advantage of dynamically allocated memory is, it is not deleted until we explicitly delete it.
 
-> There are a lot of other applications for pointers, but we will not cover it in this course.
+* There are a lot of other applications for pointers, but we will not cover it in this course.
 
 
 ```c++
