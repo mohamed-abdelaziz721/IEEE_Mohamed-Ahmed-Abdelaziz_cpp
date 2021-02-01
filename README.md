@@ -72,7 +72,7 @@ cout << "var:"<< var << endl;      // output: 5
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 ## Pointers Applications in C++ <a name="pointers-applications"></a>
 1. Passing arguments by reference to modify variable of function in other(e.g. swap two variables)\
-or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage)
+or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage).
 
 ```c++
 #include <iostream> 
