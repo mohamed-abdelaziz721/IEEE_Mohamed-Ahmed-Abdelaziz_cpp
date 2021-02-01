@@ -96,7 +96,10 @@ int main()
 2. Accessing array elements. Compiler internally uses pointers to access array elements.
 3. To return multiple values (e.g. returning square and square root of numbers or returning an array)
 4. Dynamic memory allocation : We can use pointers to dynamically allocate memory. The advantage of dynamically allocated memory is, it is not deleted until we explicitly delete it.
+
 > There are a lot of other applications for pointers, but we will not cover it in this course.
+
+
 ```c++
 // C++ program to dynamically allocate an array of given size. 
 #include <iostream> 
@@ -196,8 +199,7 @@ int main() {
     return 0;
 }
 ```
-**notice** we did not declare a pointer, but instead we used the array name for the pointer notation.
-This is an h3 heading
+**notice** we did not declare a pointer, but instead we used the array name for the pointer notation.\
 To see what is wrong with arr++ we use a simplified example:
 ```c++
 int a = 0;
@@ -213,6 +215,8 @@ If you want to pass a single-dimension array as an argument in a function, you w
 > void Fun(int arr[10]) { ..... }   // as sized array
 >
 > void Fun(int arr[]) { ..... }    // as unsized array
+
+
 ```c++
 #include <iostream>
 using namespace std;
