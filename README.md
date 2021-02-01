@@ -1,8 +1,11 @@
 ## Tabel Of Content
 
 - [Pointer Declaratrion And Assigning ](#pointers)
+  * [Pointers Applications in C++](#pointers-applications)
   * [Pointers And Arrays](#pointersandarrays)
     + [ Array name used as a pointer](#array-name-used-as-a-pointer)
+    + [ Passing Arrays to Functions](#array-pass-to-function)
+    
 - [Passing Arguments To Function](#pass-arg)
   * [Pass by value](#pass-v)
   * [Pass by pointer](#pass-p)
@@ -67,6 +70,51 @@ cout << "var:"<< var << endl;      // output: 5
 > *note* `*ptr`  has a value and `&var` is an address so we cannot write `*ptr = &var`.
 
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
+## Pointers Applications in C++ <a name="pointers-applications"></a>
+1. Passing arguments by reference to modify variable of function in other(e.g. swap two variables)\
+or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage)
+
+```c++
+#include <iostream> 
+using namespace std; 
+  
+void swap(int* x, int* y) 
+{ 
+    int temp = *x; 
+    *x = *y; 
+    *y = temp; 
+} 
+  
+int main() 
+{ 
+    int x = 10, y = 20; 
+    swap(&x, &y); 
+    cout << x << " " << y << endl; 
+    return 0; 
+} 
+```
+2. Accessing array elements. Compiler internally uses pointers to access array elements.
+3. To return multiple values (e.g. returning square and square root of numbers or returning an array)
+4. Dynamic memory allocation : We can use pointers to dynamically allocate memory. The advantage of dynamically allocated memory is, it is not deleted until we explicitly delete it.
+> There are a lot of other applications for pointers, but we will not cover it in this course.
+```c++
+// C++ program to dynamically allocate an array of given size. 
+#include <iostream> 
+using namespace std; 
+  
+int* createArr(int n) 
+{ 
+    return new int[n]; 
+} 
+  
+int main() 
+{ 
+    int* pt = createArr(10); 
+    return 0; 
+} 
+```
+
+
 
 
 ## Pointers And Arrays <a name="pointersandarrays"></a>
@@ -157,6 +205,42 @@ cout << a+1 << endl; // output: 1 but a is still holding value of 0 in the memor
 cout << a++ << endl; // output: 1 but a now hold a value 1 in the memory  
 ```
 
+## Passing Arguments To Function <a name="array-pass-to-function"></a>
+C++ does not allow to pass an entire array as an argument to a function. However, You can pass a pointer to an array by specifying the array's name without an index.\
+If you want to pass a single-dimension array as an argument in a function, you would have to declare the function in one of following three ways and all three declaration methods produce similar results because each tells the compiler that an **integer pointer** is going to be received.
+> void Fun(int *arr) { ..... }       // as a pointer 
+> void Fun(int arr[10]) { ..... }   // as sized array
+> void Fun(int arr[]) { ..... }    // as unsized array
+```c++
+#include <iostream>
+using namespace std;
+ 
+double getAverage(int arr[], int size) {
+  int i, sum = 0;       
+  double avg;          
+
+   for (i = 0; i < size; ++i) {
+      sum += arr[i];
+   }
+   avg = double(sum) / size;
+
+   return avg;
+}
+
+int main () {
+   // an int array with 5 elements.
+   int balance[5] = {1000, 2, 3, 17, 50};
+   double avg;
+
+   // pass pointer to the array as an argument.
+   avg = getAverage( balance, 5 ) ;
+ 
+   // output the returned value 
+   cout << "Average value is: " << avg << endl; 
+    
+   return 0;
+}
+```
 ## Passing Arguments To Function <a name="pass-arg"></a>
 
 We can pass actual value to the function, pass the address of the value, or passing a reference to the function. Each has a different methadology and application.
@@ -207,8 +291,8 @@ void passByPtr(int *ptr)
 
 
 ### Pass by reference <a name="pass-r"></a>
-we pass the actual value of the variable.
-**pass by refrence VS pass by pointer**
+we pass the actual value of the variable.\
+**pass by refrence VS pass by pointer**\
 References are usually preferred over pointers whenever we don’t need “reseating”.\
 **Use references when you can, and pointers when you have to.**\
 A refrence is same object with a different name. Reference must refere to an object and cannot be NULL so it is safer to use.
