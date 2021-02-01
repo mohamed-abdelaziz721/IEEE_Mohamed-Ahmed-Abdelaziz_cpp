@@ -72,7 +72,7 @@ cout << "var:"<< var << endl;      // output: 5
 >  `ptr` is an address and `var` has a value so we cannot write `ptr = var`
 ## Pointers Applications in C++ <a name="pointers-applications"></a>
 1. Passing arguments by reference to modify variable of function in other(e.g. swap two variables)\
-or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage).
+or  For efficiency purpose (passing large structure without reference would create a copy of the structure which will waste storage)
 
 ```c++
 #include <iostream> 
@@ -162,15 +162,15 @@ cout << *(arr+1) << endl;
 ```
 
 > If we initialize `ptr  = &arr[1]` we will have 
-
+>
 > ptr - 1  is same as &arr[0]
-
+>
 > ptr + 1  is same as &arr[2]
-
+>
 > ptr + 2  is same as &arr[3]
 
 
-#### Array name used as a pointer <a name="array-name-used-as-a-pointer"></a>
+## Array name used as a pointer <a name="array-name-used-as-a-pointer"></a>
 ```c++
 #include <iostream>
 using namespace std;
@@ -211,9 +211,9 @@ cout << a++ << endl; // output: 1 but a now hold a value 1 in the memory
 C++ does not allow to pass an entire array as an argument to a function. However, You can pass a pointer to an array by specifying the array's name without an index.\
 If you want to pass a single-dimension array as an argument in a function, you would have to declare the function in one of following three ways and all three declaration methods produce similar results because each tells the compiler that an **integer pointer** is going to be received.
 > void Fun(int *arr) { ..... }       // as a pointer 
->
+
 > void Fun(int arr[10]) { ..... }   // as sized array
->
+
 > void Fun(int arr[]) { ..... }    // as unsized array
 
 
@@ -359,6 +359,6 @@ void passByPtrRef(int *&ptrRef)
 here 
 -->
 
-### Support or Contact
-
-Having trouble with Pages? contact me [Mohamed.ahmed997@eng-st.cu.edu.eg](Mohamed.ahmed997@eng-st.cu.edu.eg) and I’ll help you sort it out.
+### About
+This session is prepared and managed by **Mohamed Ahmed Abdelaziz** and **Ammar Elsaied**.\
+Having trouble with Pages? Contact Us [Mohamed.ahmed997@eng-st.cu.edu.eg](Mohamed.ahmed997@eng-st.cu.edu.eg) [Mohamed.ahmed997@eng-st.cu.edu.eg](Mohamed.ahmed997@eng-st.cu.edu.eg) and We will help you sort it out.
