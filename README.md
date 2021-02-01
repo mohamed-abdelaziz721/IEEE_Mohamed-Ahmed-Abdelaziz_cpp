@@ -10,7 +10,7 @@
   * [Pass by value](#pass-v)
   * [Pass by pointer](#pass-p)
   * [Pass by reference](#pass-r)
-  * [Pass by pointer reference](#pass-pr)
+  <!-- * [Pass by pointer reference](#pass-pr)-->
 
 
 
