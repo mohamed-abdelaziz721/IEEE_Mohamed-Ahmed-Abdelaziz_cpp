@@ -209,9 +209,11 @@ void passByPtr(int *ptr)
 ### Pass by reference <a name="pass-r"></a>
 we pass the actual value of the variable.
 **pass by refrence VS pass by pointer**
-References are usually implemented by pointers. A refrence is same object with a different name. Reference must refere to an object and cannot be NULL so it is safer to use.
-* pointers can be assigned, reference cannot.
-* pointers can be null.
+References are usually preferred over pointers whenever we don’t need “reseating”.\
+**Use references when you can, and pointers when you have to.**\
+A refrence is same object with a different name. Reference must refere to an object and cannot be NULL so it is safer to use.
+* pointers can be re-assigned, reference cannot.
+* pointers can be null(**a constant with a value of zero** ). It is a good practice to initiallize a pointer as null.
 * pointers can iterate over an array.
 * pointer is a variable that hold memory address, reference has the same memory as the object .
 * pointers need to be dereferenced to acces the memory while the reference can be used directly. 
@@ -232,7 +234,7 @@ void passByRef(int &ref)
 
 }
 ```
-
+<!--
 ### Pass by  pointer reference <a name="pass-pr"></a>
 we are making a reference to the pointer. Thus we want to modify the pointer without modifying the object that the pointer is pointing to. 
 ```c++
@@ -265,7 +267,7 @@ void passByPtrRef(int *&ptrRef)
  }
 ```
 here 
-
+-->
 
 ### Support or Contact
 
